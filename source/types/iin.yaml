@@ -1,0 +1,60 @@
+---
+apiVersion: preql/1.0.0
+kind: DataType
+metadata:
+  name: iin
+  namespace: default
+  labels:
+    preql.tech/fullSingularName: 'Issuer Identification Number'
+    preql.tech/fullPluralName: 'Issuer Identification Numbers'
+    preql.tech/standard: 'true'
+    preql.tech/category: 'Identifiers'
+    preql.tech/storageSizeInBytes: '6'
+    # preql.tech/bits: ''
+    # preql.tech/signed: ''
+    # preql.tech/country: ''
+    # preql.tech/objectIdentifier: ''
+    # preql.tech/uuid: ''
+  annotations:
+    preql.tech/description: 'A unique identifier that identifies a card issuer.'
+    preql.tech/author: 'Jonathan M. Wilbur'
+    preql.tech/authorEmailAddress: 'jonathan@wilbur.space'
+    preql.tech/definingSpecification: 'ISO/IEC 7812-1:2017'
+    preql.tech/definingSpecificationURI: 'https://www.iso.org/standard/70484.html'
+    preql.tech/exampleValue: '978161'
+spec:
+  jsonEquivalent: 'string'
+  minLength: 6
+  maxLength: 6
+  regexes:
+    pcre:
+      issn:
+        - pattern: '^\\d{6}$'
+  targets:
+    bson:
+      nativeType: 'string'
+    cql:
+      nativeType: 'text'
+    elasticsearch:
+      nativeType: 'keyword'
+    json:
+      nativeType: 'string'
+    mariadb:
+      nativeType: 'CHAR(6)'
+    mysql:
+      nativeType: 'CHAR(6)'
+    openldap:
+      # TODO: Make this NumericString or Integer
+      nativeType: '1.3.6.1.4.1.1466.115.121.1.15'
+      ldapMatchingRule: 'caseIgnoreMatch'
+      ldapOrderingRule: 'caseIgnoreOrderingMatch'
+      ldapSubstringMatchingRule: 'caseIgnoreSubstringsMatch'
+    plsql:
+      nativeType: 'CHAR(6 CHAR)'
+    postgresql:
+      nativeType: 'char(6)'
+    sqlite:
+      nativeType: 'TEXT'
+    tsql:
+      nativeType: 'CHAR(6)'
+

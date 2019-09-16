@@ -1,0 +1,54 @@
+---
+apiVersion: preql/1.0.0
+kind: DataType
+metadata:
+  name: xml
+  namespace: default
+  labels:
+    preql.tech/fullSingularName: 'Extensible Markup Language Document'
+    preql.tech/fullPluralName: 'Extensible Markup Language Documents'
+    preql.tech/standard: 'true'
+    preql.tech/category: 'Serialization'
+    # preql.tech/storageSizeInBytes: ''
+    # preql.tech/bits: ''
+    # preql.tech/signed: ''
+    # preql.tech/country: ''
+    # preql.tech/objectIdentifier: ''
+    # preql.tech/uuid: ''
+  annotations:
+    preql.tech/description: 'Extensible Markup Language'
+    preql.tech/author: 'Jonathan M. Wilbur'
+    preql.tech/authorEmailAddress: 'jonathan@wilbur.space'
+    # preql.tech/definingSpecification: ''
+    # preql.tech/definingSpecificationURI: ''
+    # preql.tech/exampleValue: ''
+spec:
+  jsonEquivalent: 'string'
+  minLength: 0
+  maxLength: 4294967295
+  targets:
+    bson:
+      nativeType: 'string'
+    cql:
+      nativeType: 'text'
+    elasticsearch:
+      nativeType: 'text'
+    json:
+      nativeType: 'string'
+    mariadb:
+      nativeType: 'LONGTEXT'
+    mysql:
+      nativeType: 'LONGTEXT'
+    openldap:
+      nativeType: '1.3.6.1.4.1.1466.115.121.1.15'
+      ldapMatchingRule: 'caseIgnoreMatch'
+      ldapOrderingRule: 'caseIgnoreOrderingMatch'
+      ldapSubstringMatchingRule: 'caseIgnoreSubstringsMatch'
+    plsql:
+      nativeType: 'LONG'
+    postgresql:
+      nativeType: 'text'
+    sqlite:
+      nativeType: 'TEXT'
+    tsql:
+      nativeType: 'xml'

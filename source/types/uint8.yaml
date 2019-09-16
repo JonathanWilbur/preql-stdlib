@@ -1,0 +1,53 @@
+---
+apiVersion: preql/1.0.0
+kind: DataType
+metadata:
+  name: uint8
+  namespace: default
+  labels:
+    preql.tech/fullSingularName: '8-Bit Unsigned Integer'
+    preql.tech/fullPluralName: '8-Bit Unsigned Integers'
+    preql.tech/standard: 'true'
+    preql.tech/category: 'Integer'
+    preql.tech/storageSizeInBytes: '1'
+    preql.tech/bits: '8'
+    preql.tech/signed: 'false'
+    # preql.tech/country: ''
+    # preql.tech/objectIdentifier: ''
+    # preql.tech/uuid: ''
+  annotations:
+    preql.tech/description: 'An unsigned integer that can range between 0 and 255.'
+    preql.tech/author: 'Jonathan M. Wilbur'
+    preql.tech/authorEmailAddress: 'jonathan@wilbur.space'
+    # preql.tech/definingSpecification: ''
+    # preql.tech/definingSpecificationURI: ''
+    preql.tech/exampleValue: '224'
+spec:
+  jsonEquivalent: 'integer'
+  minimum: 0
+  maximum: 255
+  targets:
+    bson:
+      nativeType: 'integer'
+    cql:
+      nativeType: 'int'
+    elasticsearch:
+      nativeType: 'integer'
+    json:
+      nativeType: 'integer'
+    mariadb:
+      nativeType: 'TINYINT UNSIGNED'
+    mysql:
+      nativeType: 'TINYINT UNSIGNED'
+    openldap:
+      nativeType: '1.3.6.1.4.1.1466.115.121.1.27'
+      ldapMatchingRule: 'integerMatch'
+      ldapOrderingRule: 'integerOrderingMatch'
+    plsql:
+      nativeType: 'NUMBER'
+    postgresql:
+      nativeType: 'smallint'
+    sqlite:
+      nativeType: 'INTEGER'
+    tsql:
+      nativeType: 'tinyint'

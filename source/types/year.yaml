@@ -1,0 +1,51 @@
+---
+apiVersion: preql/1.0.0
+kind: DataType
+metadata:
+  name: year
+  namespace: default
+  labels:
+    preql.tech/fullSingularName: 'Year'
+    preql.tech/fullPluralName: 'Years'
+    preql.tech/standard: 'true'
+    preql.tech/category: 'Time'
+    # preql.tech/storageSizeInBytes: ''
+    # preql.tech/bits: ''
+    # preql.tech/signed: ''
+    # preql.tech/country: ''
+    # preql.tech/objectIdentifier: ''
+    # preql.tech/uuid: ''
+  annotations:
+    preql.tech/description: 'A specific year on the Gregorian calendar.'
+    preql.tech/author: 'Jonathan M. Wilbur'
+    preql.tech/authorEmailAddress: 'jonathan@wilbur.space'
+    # preql.tech/definingSpecification: ''
+    # preql.tech/definingSpecificationURI: ''
+    preql.tech/exampleValue: '2016'
+spec:
+  jsonEquivalent: 'integer'
+  targets:
+    bson:
+      nativeType: 'integer'
+    cql:
+      nativeType: 'int'
+    elasticsearch:
+      nativeType: 'integer'
+    json:
+      nativeType: 'integer'
+    mariadb:
+      nativeType: 'YEAR'
+    mysql:
+      nativeType: 'YEAR(4)'
+    openldap:
+      nativeType: '1.3.6.1.4.1.1466.115.121.1.27'
+      ldapMatchingRule: 'integerMatch'
+      ldapOrderingRule: 'integerOrderingMatch'
+    plsql:
+      nativeType: 'NUMBER'
+    postgresql:
+      nativeType: 'smallint'
+    sqlite:
+      nativeType: 'INTEGER'
+    tsql:
+      nativeType: 'smallint'

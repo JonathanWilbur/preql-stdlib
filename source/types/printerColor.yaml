@@ -1,0 +1,32 @@
+---
+apiVersion: preql/1.0.0
+kind: DataType
+metadata:
+  name: printerColor
+  namespace: default
+  labels:
+    preql.tech/fullSingularName: 'Printer Ink Color'
+    preql.tech/fullPluralName: 'Printer Ink Color'
+    preql.tech/standard: 'true'
+    preql.tech/category: 'Technology'
+    preql.tech/storageSizeInBytes: '1'
+    preql.tech/bits: '8'
+    # preql.tech/signed: ''
+    # preql.tech/country: ''
+    # preql.tech/objectIdentifier: ''
+    # preql.tech/uuid: ''
+  annotations:
+    preql.tech/description: 'Printer Ink Color'
+    preql.tech/author: 'Jonathan M. Wilbur'
+    preql.tech/authorEmailAddress: 'jonathan@wilbur.space'
+    # preql.tech/definingSpecification: ''
+    # preql.tech/definingSpecificationURI: ''
+    preql.tech/exampleValue: 'Y'
+spec:
+  jsonEquivalent: 'string'
+  name: 'printerColor'
+  values:
+    - 'C'
+    - 'M'
+    - 'Y'
+    - 'K'

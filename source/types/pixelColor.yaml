@@ -1,0 +1,31 @@
+---
+apiVersion: preql/1.0.0
+kind: DataType
+metadata:
+  name: pixelColor
+  namespace: default
+  labels:
+    preql.tech/fullSingularName: 'Pixel Color'
+    preql.tech/fullPluralName: 'Pixel Colors'
+    preql.tech/standard: 'true'
+    preql.tech/category: 'Technology'
+    preql.tech/storageSizeInBytes: '1'
+    preql.tech/bits: '8'
+    # preql.tech/signed: ''
+    # preql.tech/country: ''
+    # preql.tech/objectIdentifier: ''
+    # preql.tech/uuid: ''
+  annotations:
+    preql.tech/description: 'One of the three colors of a subpixel in modern monitors.'
+    preql.tech/author: 'Jonathan M. Wilbur'
+    preql.tech/authorEmailAddress: 'jonathan@wilbur.space'
+    # preql.tech/definingSpecification: ''
+    # preql.tech/definingSpecificationURI: ''
+    preql.tech/exampleValue: 'R'
+spec:
+  jsonEquivalent: 'string'
+  name: 'pixelColor'
+  values:
+    - 'R'
+    - 'G'
+    - 'B'

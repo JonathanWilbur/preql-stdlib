@@ -1,0 +1,24 @@
+---
+apiVersion: preql/1.0.0
+kind: CharacterSet
+metadata:
+  name: utf8
+  namespace: default
+  labels:
+    preql.tech/fullName: 'Unicode Transformation Format 8-Bit'
+    preql.tech/standard: 'true'
+    preql.tech/international: 'true'
+  annotations:
+    # preql.tech/description: ''
+    preql.tech/author: 'Jonathan M. Wilbur'
+    preql.tech/authorEmailAddress: 'jonathan@wilbur.space'
+    preql.tech/definingSpecification: 'ISO/IEC 10646:2017'
+    preql.tech/definingSpecificationURI: 'https://www.iso.org/standard/69119.html'
+spec:
+  name: utf8
+  targetEquivalents:
+    mariadb: utf8
+    mysql: utf8mb4
+    plsql: AL32UTF8
+    postgresql: UTF8
+  maximumCharacterLength: 4

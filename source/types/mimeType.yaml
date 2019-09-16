@@ -1,0 +1,82 @@
+---
+# From RFC 2045:
+# content := "Content-Type" ":" type "/" subtype
+#            *(";" parameter)
+#            ; Matching of media type and subtype
+#            ; is ALWAYS case-insensitive.
+# type := discrete-type / composite-type
+# discrete-type := "text" / "image" / "audio" / "video" / "application" / extension-token
+# extension-token := ietf-token / x-token
+# ietf-token := <An extension token defined by a
+#                 standards-track RFC and registered
+#                 with IANA.>
+# x-token := <The two characters "X-" or "x-" followed, with
+#             no  intervening white space, by any token>
+# composite-type := "message" / "multipart" / extension-token
+# subtype := extension-token / iana-token
+# parameter := attribute "=" value
+# value := token / quoted-string
+# token := 1*<any (US-ASCII) CHAR except SPACE, CTLs, or tspecials>
+# attribute := token ; ALWAYS case-insensitive.
+apiVersion: preql/1.0.0
+kind: DataType
+metadata:
+  name: mimeType
+  namespace: default
+  labels:
+    preql.tech/fullSingularName: 'Multipurpose Internet Mail Extensions Type'
+    preql.tech/fullPluralName: 'Multipurpose Internet Mail Extensions Types'
+    preql.tech/standard: 'true'
+    # preql.tech/category: ''
+    # preql.tech/storageSizeInBytes: ''
+    # preql.tech/bits: ''
+    # preql.tech/signed: ''
+    # preql.tech/country: ''
+    # preql.tech/objectIdentifier: ''
+    # preql.tech/uuid: ''
+  annotations:
+    preql.tech/description: 'Used in Internet Mail Messages to indicate content type.'
+    preql.tech/author: 'Jonathan M. Wilbur'
+    preql.tech/authorEmailAddress: 'jonathan@wilbur.space'
+    preql.tech/definingSpecification: 'IETF RFC 2045'
+    preql.tech/definingSpecificationURI: 'https://tools.ietf.org/html/rfc2045'
+    preql.tech/exampleValue: 'application/json'
+spec:
+  jsonEquivalent: 'string'
+  minLength: 3
+  maxLength: 128
+  regexes:
+    pcre:
+      mime:
+        - pattern: '^(?:X-)?[A-Z0-9]/(?:X-)?[A-Z0-9](-[A-Z0-9])*(?:\\.[A-Z0-9](-[A-Z0-9])*)?(?:;.*)'
+  setters:
+    - type: 'trim'
+      side: 'both'
+    - type: 'case'
+      casing: 'upper'
+  targets:
+    bson:
+      nativeType: 'string'
+    cql:
+      nativeType: 'text'
+    elasticsearch:
+      nativeType: 'keyword'
+    json:
+      nativeType: 'string'
+    mariadb:
+      nativeType: 'VARCHAR(128)'
+    mysql:
+      nativeType: 'VARCHAR(128)'
+    openldap:
+      nativeType: '1.3.6.1.4.1.1466.115.121.1.15'
+      ldapMatchingRule: 'caseIgnoreMatch'
+      ldapOrderingRule: 'caseIgnoreOrderingMatch'
+      ldapSubstringMatchingRule: 'caseIgnoreSubstringsMatch'
+    plsql:
+      nativeType: 'VARCHAR2(128 CHAR)'
+    postgresql:
+      nativeType: 'varchar(128)'
+    sqlite:
+      nativeType: 'TEXT'
+    tsql:
+      nativeType: 'NVARCHAR(128)'

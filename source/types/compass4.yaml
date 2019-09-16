@@ -1,0 +1,32 @@
+---
+apiVersion: preql/1.0.0
+kind: DataType
+metadata:
+  name: compass4
+  namespace: default
+  labels:
+    preql.tech/fullSingularName: 'Cardinal Direction'
+    preql.tech/fullPluralName: 'Cardinal Directions'
+    preql.tech/standard: 'true'
+    preql.tech/category: 'Geography'
+    preql.tech/storageSizeInBytes: '1'
+    preql.tech/bits: '8'
+    # preql.tech/signed: ''
+    # preql.tech/country: ''
+    # preql.tech/objectIdentifier: ''
+    # preql.tech/uuid: ''
+  annotations:
+    preql.tech/description: 'One of the four directions on a compass.'
+    preql.tech/author: 'Jonathan M. Wilbur'
+    preql.tech/authorEmailAddress: 'jonathan@wilbur.space'
+    # preql.tech/definingSpecification: ''
+    # preql.tech/definingSpecificationURI: ''
+    preql.tech/exampleValue: 'N'
+spec:
+  jsonEquivalent: 'string'
+  name: 'compass4'
+  values:
+    - 'N'
+    - 'E'
+    - 'S'
+    - 'W'

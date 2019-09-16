@@ -1,0 +1,54 @@
+---
+apiVersion: preql/1.0.0
+kind: DataType
+metadata:
+  name: text24
+  namespace: default
+  labels:
+    preql.tech/fullSingularName: '24-bit Length Indicator Text'
+    preql.tech/fullPluralName: '24-bit Length Indicator Text'
+    preql.tech/standard: 'true'
+    preql.tech/category: 'String'
+    # preql.tech/storageSizeInBytes: ''
+    # preql.tech/bits: ''
+    # preql.tech/signed: ''
+    # preql.tech/country: ''
+    # preql.tech/objectIdentifier: ''
+    # preql.tech/uuid: ''
+  annotations:
+    preql.tech/description: 'Variable-length string whose length is indicated by an 24-bit unsigned integer.'
+    preql.tech/author: 'Jonathan M. Wilbur'
+    preql.tech/authorEmailAddress: 'jonathan@wilbur.space'
+    # preql.tech/definingSpecification: ''
+    # preql.tech/definingSpecificationURI: ''
+    preql.tech/exampleValue: 'Hello world!'
+spec:
+  jsonEquivalent: 'string'
+  minLength: 0
+  maxLength: 16777215
+  targets:
+    bson:
+      nativeType: 'string'
+    cql:
+      nativeType: 'text'
+    elasticsearch:
+      nativeType: 'text'
+    json:
+      nativeType: 'string'
+    mariadb:
+      nativeType: 'MEDIUMTEXT'
+    mysql:
+      nativeType: 'MEDIUMTEXT'
+    openldap:
+      nativeType: '1.3.6.1.4.1.1466.115.121.1.15'
+      ldapMatchingRule: 'caseIgnoreMatch'
+      ldapOrderingRule: 'caseIgnoreOrderingMatch'
+      ldapSubstringMatchingRule: 'caseIgnoreSubstringsMatch'
+    plsql:
+      nativeType: 'LONG'
+    postgresql:
+      nativeType: 'text'
+    sqlite:
+      nativeType: 'TEXT'
+    tsql:
+      nativeType: 'ntext'

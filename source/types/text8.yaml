@@ -1,0 +1,54 @@
+---
+apiVersion: preql/1.0.0
+kind: DataType
+metadata:
+  name: text8
+  namespace: default
+  labels:
+    preql.tech/fullSingularName: '8-bit Length Indicator Text'
+    preql.tech/fullPluralName: '8-bit Length Indicator Text'
+    preql.tech/standard: 'true'
+    preql.tech/category: 'String'
+    # preql.tech/storageSizeInBytes: ''
+    # preql.tech/bits: ''
+    # preql.tech/signed: ''
+    # preql.tech/country: ''
+    # preql.tech/objectIdentifier: ''
+    # preql.tech/uuid: ''
+  annotations:
+    preql.tech/description: 'Variable-length string whose length is indicated by an 8-bit unsigned integer.'
+    preql.tech/author: 'Jonathan M. Wilbur'
+    preql.tech/authorEmailAddress: 'jonathan@wilbur.space'
+    # preql.tech/definingSpecification: ''
+    # preql.tech/definingSpecificationURI: ''
+    preql.tech/exampleValue: 'Hello world!'
+spec:
+  jsonEquivalent: 'string'
+  minLength: 0
+  maxLength: 255
+  targets:
+    bson:
+      nativeType: 'string'
+    cql:
+      nativeType: 'text'
+    elasticsearch:
+      nativeType: 'keyword'
+    json:
+      nativeType: 'string'
+    mariadb:
+      nativeType: 'TINYTEXT'
+    mysql:
+      nativeType: 'TINYTEXT'
+    openldap:
+      nativeType: '1.3.6.1.4.1.1466.115.121.1.15'
+      ldapMatchingRule: 'caseIgnoreMatch'
+      ldapOrderingRule: 'caseIgnoreOrderingMatch'
+      ldapSubstringMatchingRule: 'caseIgnoreSubstringsMatch'
+    plsql:
+      nativeType: 'VARCHAR2(255 CHAR)'
+    postgresql:
+      nativeType: 'varchar(255)'
+    sqlite:
+      nativeType: 'TEXT'
+    tsql:
+      nativeType: 'NVARCHAR(255)'

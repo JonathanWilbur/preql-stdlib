@@ -1,0 +1,60 @@
+---
+apiVersion: preql/1.0.0
+kind: DataType
+metadata:
+  name: issn
+  namespace: default
+  labels:
+    preql.tech/fullSingularName: 'International Standard Serial Number'
+    preql.tech/fullPluralName: 'International Standard Serial Numbers'
+    preql.tech/standard: 'true'
+    preql.tech/category: 'Identifiers'
+    preql.tech/storageSizeInBytes: '9'
+    # preql.tech/bits: ''
+    # preql.tech/signed: ''
+    # preql.tech/country: ''
+    # preql.tech/objectIdentifier: ''
+    # preql.tech/uuid: ''
+  annotations:
+    preql.tech/description: 'A unique identifier that identifies a serial publication, such as a newspaper.'
+    preql.tech/author: 'Jonathan M. Wilbur'
+    preql.tech/authorEmailAddress: 'jonathan@wilbur.space'
+    preql.tech/definingSpecification: 'ISO 3297:2017'
+    preql.tech/definingSpecificationURI: 'https://www.iso.org/standard/73322.html'
+    preql.tech/exampleValue: '9783-161X'
+spec:
+  jsonEquivalent: 'string'
+  minLength: 0
+  maxLength: 9
+  regexes:
+    pcre:
+      issn:
+        - pattern: '^\\d{4}-\\d{3}[0-9xX]$'
+  targets:
+    bson:
+      nativeType: 'string'
+    cql:
+      nativeType: 'text'
+    elasticsearch:
+      nativeType: 'keyword'
+    json:
+      nativeType: 'string'
+    mariadb:
+      nativeType: 'CHAR(9)'
+    mysql:
+      nativeType: 'CHAR(9)'
+    openldap:
+      # TODO: Make this NumericString or Integer
+      nativeType: '1.3.6.1.4.1.1466.115.121.1.15'
+      ldapMatchingRule: 'caseIgnoreMatch'
+      ldapOrderingRule: 'caseIgnoreOrderingMatch'
+      ldapSubstringMatchingRule: 'caseIgnoreSubstringsMatch'
+    plsql:
+      nativeType: 'CHAR(9 CHAR)'
+    postgresql:
+      nativeType: 'char(9)'
+    sqlite:
+      nativeType: 'TEXT'
+    tsql:
+      nativeType: 'CHAR(9)'
+

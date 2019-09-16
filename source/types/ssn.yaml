@@ -1,0 +1,63 @@
+---
+apiVersion: preql/1.0.0
+kind: DataType
+metadata:
+  name: ssn
+  namespace: default
+  labels:
+    preql.tech/fullSingularName: 'United States Social Security Number'
+    preql.tech/fullPluralName: 'United States Social Security Number'
+    preql.tech/standard: 'true'
+    preql.tech/category: 'Identifiers'
+    # preql.tech/storageSizeInBytes: ''
+    # preql.tech/bits: ''
+    # preql.tech/signed: ''
+    preql.tech/country: 'USA'
+    # preql.tech/objectIdentifier: ''
+    # preql.tech/uuid: ''
+  annotations:
+    preql.tech/description: 'A Social Security Number, as used in the United States'
+    preql.tech/author: 'Jonathan M. Wilbur'
+    preql.tech/authorEmailAddress: 'jonathan@wilbur.space'
+    # preql.tech/definingSpecification: ''
+    # preql.tech/definingSpecificationURI: ''
+    preql.tech/exampleValue: '123-45-6789'
+spec:
+  jsonEquivalent: 'string'
+  minLength: 9
+  maxLength: 9
+  regexes:
+    pcre:
+      ssn:
+        - pattern: '^\\d{9}'
+          positive: True
+  setters:
+    - type: 'replace'
+      from: '-'
+      to: ''
+  targets:
+    bson:
+      nativeType: 'string'
+    cql:
+      nativeType: 'text'
+    elasticsearch:
+      nativeType: 'keyword'
+    json:
+      nativeType: 'string'
+    mariadb:
+      nativeType: 'CHAR(9)'
+    mysql:
+      nativeType: 'CHAR(9)'
+    openldap:
+      nativeType: '1.3.6.1.4.1.1466.115.121.1.15'
+      ldapMatchingRule: 'caseIgnoreMatch'
+      ldapOrderingRule: 'caseIgnoreOrderingMatch'
+      ldapSubstringMatchingRule: 'caseIgnoreSubstringsMatch'
+    plsql:
+      nativeType: 'CHAR(9 CHAR)'
+    postgresql:
+      nativeType: 'char(9)'
+    sqlite:
+      nativeType: 'TEXT'
+    tsql:
+      nativeType: 'CHAR(9)'

@@ -1,0 +1,52 @@
+---
+apiVersion: preql/1.0.0
+kind: DataType
+metadata:
+  name: date
+  namespace: default
+  labels:
+    preql.tech/fullSingularName: 'Date'
+    preql.tech/fullPluralName: 'Dates'
+    preql.tech/standard: 'true'
+    preql.tech/category: 'Time'
+    # preql.tech/storageSizeInBytes: ''
+    # preql.tech/bits: ''
+    # preql.tech/signed: ''
+    # preql.tech/country: ''
+    # preql.tech/objectIdentifier: ''
+    # preql.tech/uuid: ''
+  annotations:
+    preql.tech/description: 'A year, month, and day that identifies a specific day, usually on the Gregorian calendar.'
+    preql.tech/author: 'Jonathan M. Wilbur'
+    preql.tech/authorEmailAddress: 'jonathan@wilbur.space'
+    # preql.tech/definingSpecification: ''
+    # preql.tech/definingSpecificationURI: ''
+    preql.tech/exampleValue: '2019-07-26'
+spec:
+  jsonEquivalent: 'string'
+  targets:
+    bson:
+      nativeType: 'date'
+    cql:
+      # TODO: Review this.
+      nativeType: 'timestamp'
+    elasticsearch:
+      nativeType: 'date'
+    json:
+      nativeType: 'string'
+    mariadb:
+      nativeType: 'DATE'
+    mysql:
+      nativeType: 'DATE'
+    openldap:
+      nativeType: '1.3.6.1.4.1.1466.115.121.1.24'
+      ldapMatchingRule: 'generalizedTimeMatch'
+      ldapOrderingRule: 'generalizedTimeOrderingMatch'
+    plsql:
+      nativeType: 'DATE'
+    postgresql:
+      nativeType: 'date'
+    sqlite:
+      nativeType: 'TEXT'
+    tsql:
+      nativeType: 'date'

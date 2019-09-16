@@ -1,0 +1,36 @@
+---
+apiVersion: preql/1.0.0
+kind: DataType
+metadata:
+  name: compass8
+  namespace: default
+  labels:
+    preql.tech/fullSingularName: 'Intercardinal Direction'
+    preql.tech/fullPluralName: 'Intercardinal Directions'
+    preql.tech/standard: 'true'
+    preql.tech/category: 'Geography'
+    preql.tech/storageSizeInBytes: '2'
+    preql.tech/bits: '16'
+    # preql.tech/signed: ''
+    # preql.tech/country: ''
+    # preql.tech/objectIdentifier: ''
+    # preql.tech/uuid: ''
+  annotations:
+    preql.tech/description: 'One of the four cardinal directions on a compass, or the four diagonals in between them.'
+    preql.tech/author: 'Jonathan M. Wilbur'
+    preql.tech/authorEmailAddress: 'jonathan@wilbur.space'
+    # preql.tech/definingSpecification: ''
+    # preql.tech/definingSpecificationURI: ''
+    preql.tech/exampleValue: 'NE'
+spec:
+  jsonEquivalent: 'string'
+  name: 'compass8'
+  values:
+    - 'N'
+    - 'NE'
+    - 'E'
+    - 'SE'
+    - 'S'
+    - 'SW'
+    - 'W'
+    - 'NW'

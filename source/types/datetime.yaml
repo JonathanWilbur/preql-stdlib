@@ -1,0 +1,52 @@
+---
+apiVersion: preql/1.0.0
+kind: DataType
+metadata:
+  name: datetime
+  namespace: default
+  labels:
+    preql.tech/fullSingularName: 'Datetime'
+    preql.tech/fullPluralName: 'Datetimes'
+    preql.tech/standard: 'true'
+    preql.tech/category: 'Time'
+    # preql.tech/storageSizeInBytes: ''
+    # preql.tech/bits: ''
+    # preql.tech/signed: ''
+    # preql.tech/country: ''
+    # preql.tech/objectIdentifier: ''
+    # preql.tech/uuid: ''
+  annotations:
+    preql.tech/description: 'A date and time.'
+    preql.tech/author: 'Jonathan M. Wilbur'
+    preql.tech/authorEmailAddress: 'jonathan@wilbur.space'
+    # preql.tech/definingSpecification: ''
+    # preql.tech/definingSpecificationURI: ''
+    preql.tech/exampleValue: '2019-07-06T17:53:23'
+spec:
+  jsonEquivalent: 'string'
+  targets:
+    bson:
+      nativeType: 'date'
+    cql:
+      nativeType: 'timestamp'
+    elasticsearch:
+      nativeType: 'date'
+    json:
+      nativeType: 'string'
+    mariadb:
+      nativeType: 'DATETIME'
+    mysql:
+      nativeType: 'DATETIME'
+    openldap:
+      nativeType: '1.3.6.1.4.1.1466.115.121.1.24'
+      ldapMatchingRule: 'generalizedTimeMatch'
+      ldapOrderingRule: 'generalizedTimeOrderingMatch'
+    plsql:
+      nativeType: 'DATE'
+    postgresql:
+      nativeType: 'timestamp'
+    sqlite:
+      nativeType: 'TEXT'
+    tsql:
+      nativeType: 'datetime2'
+

@@ -1,0 +1,61 @@
+---
+apiVersion: preql/1.0.0
+kind: DataType
+metadata:
+  name: plusCode
+  namespace: default
+  labels:
+    preql.tech/fullSingularName: 'PlusCode'
+    preql.tech/fullPluralName: 'PlusCodes'
+    preql.tech/standard: 'true'
+    preql.tech/category: 'Identifiers'
+    # preql.tech/storageSizeInBytes: ''
+    # preql.tech/bits: ''
+    # preql.tech/signed: ''
+    # preql.tech/country: ''
+    # preql.tech/objectIdentifier: ''
+    # preql.tech/uuid: ''
+  annotations:
+    preql.tech/description: 'A short, apolitical identifier for describing a location on Earth.'
+    preql.tech/author: 'Jonathan M. Wilbur'
+    preql.tech/authorEmailAddress: 'jonathan@wilbur.space'
+    # preql.tech/definingSpecification: ''
+    # preql.tech/definingSpecificationURI: ''
+    preql.tech/exampleValue: '8GC2CMXR+X6'
+spec:
+  jsonEquivalent: 'string'
+  minLength: 0
+  maxLength: 11
+  regexes:
+    pcre:
+      pluscode:
+        - pattern: '^[A-Z0-9]{8}\\+[A-Z0-9]{2}'
+  setters:
+    - type: 'case'
+      casing: 'upper'
+  targets:
+    bson:
+      nativeType: 'string'
+    cql:
+      nativeType: 'text'
+    elasticsearch:
+      nativeType: 'keyword'
+    json:
+      nativeType: 'string'
+    mariadb:
+      nativeType: 'VARCHAR(11)'
+    mysql:
+      nativeType: 'VARCHAR(11)'
+    openldap:
+      nativeType: '1.3.6.1.4.1.1466.115.121.1.15'
+      ldapMatchingRule: 'caseIgnoreMatch'
+      ldapOrderingRule: 'caseIgnoreOrderingMatch'
+      ldapSubstringMatchingRule: 'caseIgnoreSubstringsMatch'
+    plsql:
+      nativeType: 'VARCHAR2(11 CHAR)'
+    postgresql:
+      nativeType: 'varchar(11)'
+    sqlite:
+      nativeType: 'TEXT'
+    tsql:
+      nativeType: 'VARCHAR(11)'

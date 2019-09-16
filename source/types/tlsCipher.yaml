@@ -1,0 +1,37 @@
+---
+apiVersion: preql/1.0.0
+kind: DataType
+metadata:
+  name: tlsCipher
+  namespace: default
+  labels:
+    preql.tech/fullSingularName: ''
+    preql.tech/fullPluralName: ''
+    preql.tech/standard: 'true'
+    preql.tech/category: ''
+    # preql.tech/storageSizeInBytes: ''
+    # preql.tech/bits: ''
+    # preql.tech/signed: ''
+    # preql.tech/country: ''
+    # preql.tech/objectIdentifier: ''
+    # preql.tech/uuid: ''
+  annotations:
+    preql.tech/description: ''
+    preql.tech/author: 'Jonathan M. Wilbur'
+    preql.tech/authorEmailAddress: 'jonathan@wilbur.space'
+    # preql.tech/definingSpecification: ''
+    # preql.tech/definingSpecificationURI: ''
+    preql.tech/exampleValue: ''
+spec:
+  jsonEquivalent: 'string'
+  # name:
+  # values:
+  # minimum: 0
+  # maximum: 1
+  # minLength: 0
+  # maxLength: 1
+  # regexes:
+  #   pcre:
+  # setters:
+  #   - type:
+  targets: {}

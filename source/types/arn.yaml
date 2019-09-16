@@ -1,0 +1,59 @@
+---
+apiVersion: preql/1.0.0
+kind: DataType
+metadata:
+  name: arn
+  namespace: default
+  labels:
+    preql.tech/fullSingularName: 'Amazon Resource Name'
+    preql.tech/fullPluralName: 'Amazon Resource Names'
+    preql.tech/standard: 'true'
+    preql.tech/category: 'Identifiers'
+    # preql.tech/storageSizeInBytes: ''
+    # preql.tech/bits: ''
+    # preql.tech/signed: ''
+    # preql.tech/country: ''
+    # preql.tech/objectIdentifier: ''
+    # preql.tech/uuid: ''
+  annotations:
+    preql.tech/description: 'An identifier invented by Amazon Inc. that unique identifies Amazon Web Services resources.'
+    preql.tech/author: 'Jonathan M. Wilbur'
+    preql.tech/authorEmailAddress: 'jonathan@wilbur.space'
+    # preql.tech/definingSpecification: ''
+    preql.tech/definingSpecificationURI: 'https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html'
+    preql.tech/exampleValue: 'arn:aws:elasticbeanstalk:us-east-1:123456789012:environment/My App/MyEnvironment'
+spec:
+  jsonEquivalent: 'string'
+  minLength: 0
+  maxLength: 128
+  regexes:
+    pcre:
+      arn:
+        - pattern: '^arn:[^:\\s]+:[a-z0-9\\-]+:[a-z0-9\\-]*:\\d*:[A-Za-z0-9:\\-\\/ ]+'
+          positive: True
+  targets:
+    bson:
+      nativeType: 'string'
+    cql:
+      nativeType: 'text'
+    elasticsearch:
+      nativeType: 'keyword'
+    json:
+      nativeType: 'string'
+    mariadb:
+      nativeType: 'VARCHAR(128)'
+    mysql:
+      nativeType: 'VARCHAR(128)'
+    openldap:
+      nativeType: '1.3.6.1.4.1.1466.115.121.1.15'
+      ldapMatchingRule: 'caseIgnoreMatch'
+      ldapOrderingRule: 'caseIgnoreOrderingMatch'
+      ldapSubstringMatchingRule: 'caseIgnoreSubstringsMatch'
+    plsql:
+      nativeType: 'VARCHAR2(128 CHAR)'
+    postgresql:
+      nativeType: 'varchar(128)'
+    sqlite:
+      nativeType: 'TEXT'
+    tsql:
+      nativeType: 'NVARCHAR(128)'

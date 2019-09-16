@@ -1,0 +1,61 @@
+---
+apiVersion: preql/1.0.0
+kind: DataType
+metadata:
+  name: mic
+  namespace: default
+  labels:
+    preql.tech/fullSingularName: 'Market Identifier Code'
+    preql.tech/fullPluralName: 'Market Identifier Codes'
+    preql.tech/standard: 'true'
+    preql.tech/category: 'Identifiers'
+    preql.tech/storageSizeInBytes: '4'
+    # preql.tech/bits: ''
+    # preql.tech/signed: ''
+    # preql.tech/country: ''
+    # preql.tech/objectIdentifier: ''
+    # preql.tech/uuid: ''
+  annotations:
+    preql.tech/description: 'A unique identifier that identifies a securities trading exchange.'
+    preql.tech/author: 'Jonathan M. Wilbur'
+    preql.tech/authorEmailAddress: 'jonathan@wilbur.space'
+    preql.tech/definingSpecification: 'ISO 10383:2012'
+    preql.tech/definingSpecificationURI: 'https://www.iso.org/standard/61067.html'
+    preql.tech/exampleValue: 'XNAS'
+spec:
+  jsonEquivalent: 'string'
+  minLength: 4
+  maxLength: 4
+  regexes:
+    pcre:
+      mic:
+        - pattern: '^[A-Z0-9]{4}$'
+          positive: True
+  targets:
+    bson:
+      nativeType: 'string'
+    cql:
+      nativeType: 'text'
+    elasticsearch:
+      nativeType: 'keyword'
+    json:
+      nativeType: 'string'
+    mariadb:
+      nativeType: 'CHAR(4)'
+    mysql:
+      nativeType: 'CHAR(4)'
+    openldap:
+      # TODO: Make this NumericString or Integer
+      nativeType: '1.3.6.1.4.1.1466.115.121.1.15'
+      ldapMatchingRule: 'caseIgnoreMatch'
+      ldapOrderingRule: 'caseIgnoreOrderingMatch'
+      ldapSubstringMatchingRule: 'caseIgnoreSubstringsMatch'
+    plsql:
+      nativeType: 'CHAR(4 CHAR)'
+    postgresql:
+      nativeType: 'char(4)'
+    sqlite:
+      nativeType: 'TEXT'
+    tsql:
+      nativeType: 'CHAR(4)'
+

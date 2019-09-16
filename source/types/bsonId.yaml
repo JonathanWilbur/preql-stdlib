@@ -1,0 +1,62 @@
+---
+apiVersion: preql/1.0.0
+kind: DataType
+metadata:
+  name: bsonId
+  namespace: default
+  labels:
+    preql.tech/fullSingularName: 'BSON Object Identifier'
+    preql.tech/fullPluralName: 'BSON Object Identifiers'
+    preql.tech/standard: 'true'
+    preql.tech/category: 'Identifiers'
+    preql.tech/storageSizeInBytes: '12'
+    preql.tech/bits: '96'
+    # preql.tech/signed: ''
+    # preql.tech/country: ''
+    # preql.tech/objectIdentifier: ''
+    # preql.tech/uuid: ''
+  annotations:
+    preql.tech/description: 'BSON Object Identifier, as used in MongoDB.'
+    preql.tech/author: 'Jonathan M. Wilbur'
+    preql.tech/authorEmailAddress: 'jonathan@wilbur.space'
+    # preql.tech/definingSpecification: ''
+    preql.tech/definingSpecificationURI: 'https://docs.mongodb.com/manual/reference/method/ObjectId/'
+    preql.tech/exampleValue: '9c1b4584b987d6d3bebdbd27'
+spec:
+  jsonEquivalent: 'string'
+  minLength: 24
+  maxLength: 24
+  regexes:
+    pcre:
+      bsonId:
+        - pattern: '^[0-9A-Fa-f]{24}'
+          positive: True
+  setters:
+    - type: 'case'
+      casing: 'upper'
+  targets:
+    bson:
+      nativeType: 'objectId'
+    cql:
+      nativeType: 'text'
+    elasticsearch:
+      nativeType: 'keyword'
+    json:
+      nativeType: 'string'
+    mariadb:
+      nativeType: 'CHAR(24)'
+    mysql:
+      nativeType: 'CHAR(24)'
+    openldap:
+      nativeType: '1.3.6.1.4.1.1466.115.121.1.15'
+      ldapMatchingRule: 'caseIgnoreMatch'
+      ldapOrderingRule: 'caseIgnoreOrderingMatch'
+      ldapSubstringMatchingRule: 'caseIgnoreSubstringsMatch'
+    plsql:
+      nativeType: 'CHAR(24 CHAR)'
+    postgresql:
+      nativeType: 'char(24)'
+    sqlite:
+      nativeType: 'TEXT'
+    tsql:
+      nativeType: 'CHAR(24)'

@@ -1,0 +1,61 @@
+---
+apiVersion: preql/1.0.0
+kind: DataType
+metadata:
+  name: ean8
+  namespace: default
+  labels:
+    preql.tech/fullSingularName: '8-Digit European Article Number'
+    preql.tech/fullPluralName: '8-Digit European Article Numbers'
+    preql.tech/standard: 'true'
+    preql.tech/category: 'Identifiers'
+    # preql.tech/storageSizeInBytes: ''
+    # preql.tech/bits: ''
+    # preql.tech/signed: ''
+    # preql.tech/country: ''
+    # preql.tech/objectIdentifier: ''
+    # preql.tech/uuid: ''
+  annotations:
+    preql.tech/description: 'A 8-Digit European Article Number, as specified by GS1.'
+    preql.tech/author: 'Jonathan M. Wilbur'
+    preql.tech/authorEmailAddress: 'jonathan@wilbur.space'
+    # preql.tech/definingSpecification: ''
+    # preql.tech/definingSpecificationURI: ''
+    preql.tech/exampleValue: '19235234'
+spec:
+  jsonEquivalent: 'string'
+  minLength: 8
+  maxLength: 8
+  regexes:
+    pcre:
+      ean:
+        - pattern: '^\\d{8}'
+          positive: True
+  targets:
+    bson:
+      nativeType: 'string'
+    cql:
+      nativeType: 'text'
+    elasticsearch:
+      nativeType: 'keyword'
+    json:
+      nativeType: 'string'
+    mariadb:
+      nativeType: 'VARCHAR(8)'
+    mysql:
+      nativeType: 'VARCHAR(8)'
+    openldap:
+      # TODO: Make this an INTEGER or NumericString
+      nativeType: '1.3.6.1.4.1.1466.115.121.1.15'
+      ldapMatchingRule: 'caseIgnoreMatch'
+      ldapOrderingRule: 'caseIgnoreOrderingMatch'
+      ldapSubstringMatchingRule: 'caseIgnoreSubstringsMatch'
+    plsql:
+      nativeType: 'VARCHAR2(8 CHAR)'
+    postgresql:
+      nativeType: 'varchar(8)'
+    sqlite:
+      nativeType: 'TEXT'
+    tsql:
+      nativeType: 'VARCHAR(8)'
+

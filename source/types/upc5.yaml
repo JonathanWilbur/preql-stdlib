@@ -1,0 +1,60 @@
+---
+apiVersion: preql/1.0.0
+kind: DataType
+metadata:
+  name: upc5
+  namespace: default
+  labels:
+    preql.tech/fullSingularName: '5-Digit Universal Product Code'
+    preql.tech/fullPluralName: '5-Digit Universal Product Code'
+    preql.tech/standard: 'true'
+    preql.tech/category: 'Identifiers'
+    # preql.tech/storageSizeInBytes: ''
+    # preql.tech/bits: ''
+    # preql.tech/signed: ''
+    # preql.tech/country: ''
+    # preql.tech/objectIdentifier: ''
+    # preql.tech/uuid: ''
+  annotations:
+    preql.tech/description: 'A 5-Digit Universal Product Code, as specified by GS1.'
+    preql.tech/author: 'Jonathan M. Wilbur'
+    preql.tech/authorEmailAddress: 'jonathan@wilbur.space'
+    # preql.tech/definingSpecification: ''
+    # preql.tech/definingSpecificationURI: ''
+    preql.tech/exampleValue: '19234'
+spec:
+  jsonEquivalent: 'string'
+  minLength: 5
+  maxLength: 5
+  regexes:
+    pcre:
+      upc:
+        - pattern: '^\\d{5}'
+          positive: True
+  targets:
+    bson:
+      nativeType: 'string'
+    cql:
+      nativeType: 'text'
+    elasticsearch:
+      nativeType: 'keyword'
+    json:
+      nativeType: 'string'
+    mariadb:
+      nativeType: 'VARCHAR(5)'
+    mysql:
+      nativeType: 'VARCHAR(5)'
+    openldap:
+      nativeType: '1.3.6.1.4.1.1466.115.121.1.15'
+      ldapMatchingRule: 'caseIgnoreMatch'
+      ldapOrderingRule: 'caseIgnoreOrderingMatch'
+      ldapSubstringMatchingRule: 'caseIgnoreSubstringsMatch'
+    plsql:
+      nativeType: 'VARCHAR(5 CHAR)'
+    postgresql:
+      nativeType: 'varchar(5)'
+    sqlite:
+      nativeType: 'TEXT'
+    tsql:
+      nativeType: 'VARCHAR(5)'
+

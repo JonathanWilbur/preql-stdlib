@@ -1,0 +1,60 @@
+---
+apiVersion: preql/1.0.0
+kind: DataType
+metadata:
+  name: isan
+  namespace: default
+  labels:
+    preql.tech/fullSingularName: 'International Standard Audiovisual Number'
+    preql.tech/fullPluralName: 'International Standard Audiovisual Numbers'
+    preql.tech/standard: 'true'
+    preql.tech/category: 'Identifiers'
+    preql.tech/storageSizeInBytes: '12'
+    # preql.tech/bits: ''
+    # preql.tech/signed: ''
+    # preql.tech/country: ''
+    # preql.tech/objectIdentifier: ''
+    # preql.tech/uuid: ''
+  annotations:
+    preql.tech/description: 'A unique identifier that identifies audiovisual works.'
+    preql.tech/author: 'Jonathan M. Wilbur'
+    preql.tech/authorEmailAddress: 'jonathan@wilbur.space'
+    preql.tech/definingSpecification: 'ISO 15706-1:2002'
+    preql.tech/definingSpecificationURI: 'https://www.iso.org/standard/28779.html'
+    preql.tech/exampleValue: '978316148410'
+spec:
+  jsonEquivalent: 'string'
+  minLength: 0
+  maxLength: 12
+  regexes:
+    pcre:
+      isan:
+        - pattern: '^\\d{12}'
+  targets:
+    bson:
+      nativeType: 'string'
+    cql:
+      nativeType: 'text'
+    elasticsearch:
+      nativeType: 'keyword'
+    json:
+      nativeType: 'string'
+    mariadb:
+      nativeType: 'CHAR(12)'
+    mysql:
+      nativeType: 'CHAR(12)'
+    openldap:
+      # TODO: Make this NumericString or Integer
+      nativeType: '1.3.6.1.4.1.1466.115.121.1.15'
+      ldapMatchingRule: 'caseIgnoreMatch'
+      ldapOrderingRule: 'caseIgnoreOrderingMatch'
+      ldapSubstringMatchingRule: 'caseIgnoreSubstringsMatch'
+    plsql:
+      nativeType: 'CHAR(12 CHAR)'
+    postgresql:
+      nativeType: 'char(12)'
+    sqlite:
+      nativeType: 'TEXT'
+    tsql:
+      nativeType: 'CHAR(12)'
+

@@ -1,0 +1,59 @@
+---
+apiVersion: preql/1.0.0
+kind: DataType
+metadata:
+  name: locale
+  namespace: default
+  labels:
+    preql.tech/fullSingularName: 'Locale'
+    preql.tech/fullPluralName: 'Locales'
+    preql.tech/standard: 'true'
+    preql.tech/category: 'Internationalization'
+    preql.tech/storageSizeInBytes: '5'
+    preql.tech/bits: '40'
+    # preql.tech/signed: ''
+    # preql.tech/country: ''
+    # preql.tech/objectIdentifier: ''
+    # preql.tech/uuid: ''
+  annotations:
+    preql.tech/description: 'A locale identifier'
+    preql.tech/author: 'Jonathan M. Wilbur'
+    preql.tech/authorEmailAddress: 'jonathan@wilbur.space'
+    # preql.tech/definingSpecification: ''
+    # preql.tech/definingSpecificationURI: ''
+    preql.tech/exampleValue: 'en_US'
+spec:
+  jsonEquivalent: 'string'
+  minLength: 5
+  maxLength: 5
+  regexes:
+    pcre:
+      locale:
+        - pattern: '^[a-z]{2}_[A-Z]{2}'
+          positive: True
+  targets:
+    bson:
+      nativeType: 'string'
+    cql:
+      nativeType: 'text'
+    elasticsearch:
+      nativeType: 'keyword'
+    json:
+      nativeType: 'string'
+    mariadb:
+      nativeType: 'CHAR(5)'
+    mysql:
+      nativeType: 'CHAR(5)'
+    openldap:
+      nativeType: '1.3.6.1.4.1.1466.115.121.1.15'
+      ldapMatchingRule: 'caseIgnoreMatch'
+      ldapOrderingRule: 'caseIgnoreOrderingMatch'
+      ldapSubstringMatchingRule: 'caseIgnoreSubstringsMatch'
+    plsql:
+      nativeType: 'CHAR(5 CHAR)'
+    postgresql:
+      nativeType: 'char(5)'
+    sqlite:
+      nativeType: 'TEXT'
+    tsql:
+      nativeType: 'CHAR(5)'

@@ -1,0 +1,28 @@
+---
+apiVersion: preql/1.0.0
+kind: Collation
+metadata:
+  name: utf8ciai
+  namespace: default
+  labels:
+    preql.tech/fullName: 'Unicode Transformation Format 8-Bit Case Insensitive Accent Insensitive'
+    preql.tech/standard: 'true'
+    preql.tech/international: 'true'
+  annotations:
+    # preql.tech/description: ''
+    preql.tech/author: 'Jonathan M. Wilbur'
+    preql.tech/authorEmailAddress: 'jonathan@wilbur.space'
+    preql.tech/definingSpecification: 'ISO/IEC 10646:2017'
+    preql.tech/definingSpecificationURI: 'https://www.iso.org/standard/69119.html'
+spec:
+  name: utf8ciai
+  targetEquivalents:
+    mariadb: utf8_general_ci
+    mysql: utf8mb4_unicode_ci
+    plsql: AL32UTF8
+    postgresql: UTF8
+    tsql: LATIN1_GENERAL_100_CI_AI_SC_UTF8
+  caseSensitive: true
+  accentSensitive: true
+  binary: false
+  characterSet: utf8

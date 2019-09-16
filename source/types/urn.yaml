@@ -1,0 +1,65 @@
+---
+apiVersion: preql/1.0.0
+kind: DataType
+metadata:
+  name: urn
+  namespace: default
+  labels:
+    preql.tech/fullSingularName: 'Uniform Resource Name'
+    preql.tech/fullPluralName: 'Uniform Resource Name'
+    preql.tech/standard: 'true'
+    preql.tech/category: 'Identifiers'
+    # preql.tech/storageSizeInBytes: ''
+    # preql.tech/bits: ''
+    # preql.tech/signed: ''
+    # preql.tech/country: ''
+    # preql.tech/objectIdentifier: ''
+    # preql.tech/uuid: ''
+  annotations:
+    # preql.tech/description: ''
+    preql.tech/author: 'Jonathan M. Wilbur'
+    preql.tech/authorEmailAddress: 'jonathan@wilbur.space'
+    preql.tech/definingSpecification: 'IETF RFC 8141'
+    preql.tech/definingSpecificationURI: 'https://datatracker.ietf.org/doc/rfc8141/'
+    preql.tech/exampleValue: 'urn:uuid:ab16b997-659c-446f-bf22-af65af22c06b'
+spec:
+  jsonEquivalent: 'string'
+  minLength: 1
+  # Though a URI has no length limitation, 512 is really large and is still
+  # within a length that permits indexing for most relational DBMSs.
+  maxLength: 512
+  regexes:
+    pcre:
+      urn:
+      - pattern: '^urn:'
+        positive: True
+  setters:
+    - type: 'case'
+      casing: 'lower'
+  targets:
+    bson:
+      nativeType: 'string'
+    cql:
+      nativeType: 'text'
+    elasticsearch:
+      nativeType: 'keyword'
+    json:
+      nativeType: 'string'
+    mariadb:
+      nativeType: 'VARCHAR(512)'
+    mysql:
+      nativeType: 'VARCHAR(512)'
+    openldap:
+      # TODO: REVIEW: Make this IA5String?
+      nativeType: '1.3.6.1.4.1.1466.115.121.1.15'
+      ldapMatchingRule: 'caseIgnoreMatch'
+      ldapOrderingRule: 'caseIgnoreOrderingMatch'
+      ldapSubstringMatchingRule: 'caseIgnoreSubstringsMatch'
+    plsql:
+      nativeType: 'VARCHAR2(512 CHAR)'
+    postgresql:
+      nativeType: 'varchar(512)'
+    sqlite:
+      nativeType: 'TEXT'
+    tsql:
+      nativeType: 'VARCHAR(512)'

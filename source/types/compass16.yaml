@@ -1,0 +1,46 @@
+---
+apiVersion: preql/1.0.0
+kind: DataType
+metadata:
+  name: compass16
+  namespace: default
+  labels:
+    preql.tech/fullSingularName: 'Secondary Intercardinal Direction'
+    preql.tech/fullPluralName: 'Secondary Intercardinal Directions'
+    preql.tech/standard: 'true'
+    preql.tech/category: 'Geography'
+    preql.tech/storageSizeInBytes: '3'
+    preql.tech/bits: '24'
+    # preql.tech/signed: ''
+    # preql.tech/country: ''
+    # preql.tech/objectIdentifier: ''
+    # preql.tech/uuid: ''
+  annotations:
+    preql.tech/description: >
+      One of the intercardinal directions on a compass, or the diagonals
+      between them, or the directions between the diagonals.
+    preql.tech/author: 'Jonathan M. Wilbur'
+    preql.tech/authorEmailAddress: 'jonathan@wilbur.space'
+    # preql.tech/definingSpecification: ''
+    # preql.tech/definingSpecificationURI: ''
+    preql.tech/exampleValue: 'SSE'
+spec:
+  jsonEquivalent: 'string'
+  name: 'compass16'
+  values:
+    - 'N'
+    - 'NNE'
+    - 'NE'
+    - 'ENE'
+    - 'E'
+    - 'ESE'
+    - 'SE'
+    - 'SSE'
+    - 'S'
+    - 'SSW'
+    - 'SW'
+    - 'WSW'
+    - 'W'
+    - 'WNW'
+    - 'NW'
+    - 'NNW'

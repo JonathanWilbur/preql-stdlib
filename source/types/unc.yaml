@@ -1,0 +1,76 @@
+---
+# UNC                = "\\" host-name "\" share-name  [ "\" object-name ]
+# host-name          = "[" IPv6address "]" / IPv4address / reg-name
+#   ; IPv6address, IPv4address, and reg-name as specified in [RFC3986]
+# share-name         = 1*80pchar
+# pchar              = %x20-21 / %x23-29 / %x2D-2E / %x30-39 / %x40-5A / %x5E-7B / %x7D-FF
+# object-name        = *path-name [ "\" file-name ]
+# path-name          = 1*255pchar
+# file-name          = 1*255fchar [ ":" stream-name [ ":" stream-type ] ]
+# fchar              = %x20-21 / %x23-29 / %x2B-2E / %x30-39 / %x3B / %x3D / %x40-5B / %x5D-7B / %x7D-FF
+# stream-name        = *schar
+# schar              = %x01-2E / %x30-39 / %x3B-5B /%x5D-FF
+# stream-type        = 1*schar
+apiVersion: preql/1.0.0
+kind: DataType
+metadata:
+  name: unc
+  namespace: default
+  labels:
+    preql.tech/fullSingularName: 'Universal Naming Convention String'
+    preql.tech/fullPluralName: 'Universal Naming Convention Strings'
+    preql.tech/standard: 'true'
+    preql.tech/category: 'Identifier'
+    # preql.tech/storageSizeInBytes: ''
+    # preql.tech/bits: ''
+    # preql.tech/signed: ''
+    # preql.tech/country: ''
+    # preql.tech/objectIdentifier: ''
+    # preql.tech/uuid: ''
+  annotations:
+    preql.tech/description: ''
+    preql.tech/author: 'Jonathan M. Wilbur'
+    preql.tech/authorEmailAddress: 'jonathan@wilbur.space'
+    # preql.tech/definingSpecification: ''
+    preql.tech/definingSpecificationURI: 'https://docs.microsoft.com/en-us/openspecs/windows_protocols/ms-dtyp/62e862f4-2a51-452e-8eeb-dc4ff5ee33cc'
+    preql.tech/exampleValue: ''
+spec:
+  jsonEquivalent: 'string'
+  minLength: 5
+  maxLength: 768
+  # FIXME: Invalid regular expression.
+  # regexes:
+  #   pcre:
+  #     unc:
+  #       # This regular expression should be accurate except for the host-name,
+  #       # which is generously interpreted.
+  #       - pattern: >
+  #           ^\\\\\\S+\\[ !\\d\\-\\.\\/#\\$%&'\\(\\)\\x{40}-\\x{5A}\\x{5E}-\\x{7B}\\x{7D}-\\x{FF}]{1,80}(?:\\[ !\\d\\-\\.\\/#\\$%&'\\(\\)\\x{40}-\\x{5A}\\x{5E}-\\x{7B}\\x{7D}-\\x{FF}]{1,255}(?:\\[ !\\x{23}-\\x{29}\\x{2B}-\\x{2E}\\d;=\\x{40}-\\x{5B}\\x{5D}-\\x{7B}\\x{7D}-\\x{FF}]{1,255}(?:[\\x{01}-\\x{2E}\\d\\x{3B}-\\x{5B}\\x{5D}-\\x{FF}]*(?::[\\x{01}-\\x{2E}\\d\\x{3B}-\\x{5B}\\x{5D}-\\x{FF}]+)?)?)?)?
+  #         positive: True
+  targets:
+    bson:
+      nativeType: 'string'
+    cql:
+      nativeType: 'text'
+    elasticsearch:
+      nativeType: 'keyword'
+    json:
+      nativeType: 'string'
+    mariadb:
+      nativeType: 'VARCHAR(768)'
+    mysql:
+      nativeType: 'VARCHAR(768)'
+    openldap:
+      nativeType: '1.3.6.1.4.1.1466.115.121.1.15'
+      ldapMatchingRule: 'caseIgnoreMatch'
+      ldapOrderingRule: 'caseIgnoreOrderingMatch'
+      ldapSubstringMatchingRule: 'caseIgnoreSubstringsMatch'
+    plsql:
+      nativeType: 'VARCHAR2(768 CHAR)'
+    postgresql:
+      nativeType: 'varchar(768)'
+    sqlite:
+      nativeType: 'TEXT'
+    tsql:
+      nativeType: 'NVARCHAR(768)'
+

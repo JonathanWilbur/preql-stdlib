@@ -1,0 +1,59 @@
+---
+apiVersion: preql/1.0.0
+kind: DataType
+metadata:
+  name: sid
+  namespace: default
+  labels:
+    preql.tech/fullSingularName: 'Security Identifier'
+    preql.tech/fullPluralName: 'Security Identifiers'
+    preql.tech/standard: 'true'
+    preql.tech/category: 'Identifiers'
+    # preql.tech/storageSizeInBytes: ''
+    # preql.tech/bits: ''
+    # preql.tech/signed: ''
+    # preql.tech/country: ''
+    # preql.tech/objectIdentifier: ''
+    # preql.tech/uuid: ''
+  annotations:
+    preql.tech/description: 'A Security Identifier, as invented by Microsoft.'
+    preql.tech/author: 'Jonathan M. Wilbur'
+    preql.tech/authorEmailAddress: 'jonathan@wilbur.space'
+    # preql.tech/definingSpecification: ''
+    preql.tech/definingSpecificationURI: 'https://docs.microsoft.com/en-us/windows/win32/secauthz/security-identifiers'
+    preql.tech/exampleValue: 'S-1-5-9'
+spec:
+  jsonEquivalent: 'string'
+  minLength: 6
+  maxLength: 128
+  regexes:
+    pcre:
+      sid:
+        - pattern: '^S-\\d-\\d+(-\\d+)+'
+          positive: True
+  targets:
+    bson:
+      nativeType: 'string'
+    cql:
+      nativeType: 'text'
+    elasticsearch:
+      nativeType: 'keyword'
+    json:
+      nativeType: 'string'
+    mariadb:
+      nativeType: 'VARCHAR(128)'
+    mysql:
+      nativeType: 'VARCHAR(128)'
+    openldap:
+      nativeType: '1.3.6.1.4.1.1466.115.121.1.44'
+      ldapMatchingRule: 'caseIgnoreMatch'
+      ldapOrderingRule: 'caseIgnoreOrderingMatch'
+      ldapSubstringMatchingRule: 'caseIgnoreSubstringsMatch'
+    plsql:
+      nativeType: 'VARCHAR(128 CHAR)'
+    postgresql:
+      nativeType: 'varchar(128)'
+    sqlite:
+      nativeType: 'TEXT'
+    tsql:
+      nativeType: 'NVARCHAR(128)'
