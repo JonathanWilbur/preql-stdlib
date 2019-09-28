@@ -24,8 +24,6 @@ metadata:
     preql.tech/exampleValue: 'ERROR_TCP_CONNECTION_WAS_RESET'
 spec:
   jsonEquivalent: 'string'
-  minLength: 0
-  maxLength: 32
   targets:
     bson:
       nativeType: 'string'

@@ -2,11 +2,11 @@
 apiVersion: preql/1.0.0
 kind: DataType
 metadata:
-  name: varchar16
+  name: varchar1024
   namespace: default
   labels:
-    preql.tech/fullSingularName: 'Variable-length 16-character string'
-    preql.tech/fullPluralName: 'Variable-length 16-character strings'
+    preql.tech/fullSingularName: 'Variable-length 1024-character string'
+    preql.tech/fullPluralName: 'Variable-length 1024-character strings'
     preql.tech/standard: 'true'
     preql.tech/category: 'String'
     # preql.tech/storageSizeInBytes: ''
@@ -16,12 +16,12 @@ metadata:
     # preql.tech/objectIdentifier: ''
     # preql.tech/uuid: ''
   annotations:
-    preql.tech/description: 'A string that can contain up to 16 characters.'
+    preql.tech/description: 'A string that can contain up to 1024 characters.'
     preql.tech/author: 'Jonathan M. Wilbur'
     preql.tech/authorEmailAddress: 'jonathan@wilbur.space'
     # preql.tech/definingSpecification: ''
     # preql.tech/definingSpecificationURI: ''
-    preql.tech/exampleValue: 'ERR_CONXN_RESET'
+    preql.tech/exampleValue: 'NETWORKING_ERROR_TCP_CONNECTION_WAS_RESET_BY_REMOTE_HOST'
 spec:
   jsonEquivalent: 'string'
   targets:
@@ -34,19 +34,19 @@ spec:
     json:
       nativeType: 'string'
     mariadb:
-      nativeType: 'VARCHAR(16)'
+      nativeType: 'VARCHAR(1024)'
     mysql:
-      nativeType: 'VARCHAR(16)'
+      nativeType: 'VARCHAR(1024)'
     openldap:
       nativeType: '1.3.6.1.4.1.1466.115.121.1.15'
       ldapMatchingRule: 'caseIgnoreMatch'
       ldapOrderingRule: 'caseIgnoreOrderingMatch'
       ldapSubstringMatchingRule: 'caseIgnoreSubstringsMatch'
     plsql:
-      nativeType: 'VARCHAR2(16 CHAR)'
+      nativeType: 'VARCHAR2(1024 CHAR)'
     postgresql:
-      nativeType: 'varchar(16)'
+      nativeType: 'varchar(1024)'
     sqlite:
       nativeType: 'TEXT'
     tsql:
-      nativeType: 'NVARCHAR(16)'
+      nativeType: 'NVARCHAR(1024)'
