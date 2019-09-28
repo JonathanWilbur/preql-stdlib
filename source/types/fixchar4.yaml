@@ -5,8 +5,8 @@ metadata:
   name: fixchar4
   namespace: default
   labels:
-    preql.tech/fullSingularName: 'Fixed-Length Character String'
-    preql.tech/fullPluralName: 'Fixed-Length Character String'
+    preql.tech/fullSingularName: 'Fixed-length 4-character string'
+    preql.tech/fullPluralName: 'Fixed-length 4-character strings'
     preql.tech/standard: 'true'
     preql.tech/category: 'String'
     # preql.tech/storageSizeInBytes: ''
@@ -16,16 +16,14 @@ metadata:
     # preql.tech/objectIdentifier: ''
     # preql.tech/uuid: ''
   annotations:
-    preql.tech/description: 'A Character String that is only four characters long.'
+    preql.tech/description: 'A string that contains 4 characters.'
     preql.tech/author: 'Jonathan M. Wilbur'
     preql.tech/authorEmailAddress: 'jonathan@wilbur.space'
     # preql.tech/definingSpecification: ''
     # preql.tech/definingSpecificationURI: ''
-    preql.tech/exampleValue: 'USoA'
+    preql.tech/exampleValue: 'EXAM'
 spec:
   jsonEquivalent: 'string'
-  minLength: 4
-  maxLength: 4
   targets:
     bson:
       nativeType: 'string'
@@ -45,10 +43,10 @@ spec:
       ldapOrderingRule: 'caseIgnoreOrderingMatch'
       ldapSubstringMatchingRule: 'caseIgnoreSubstringsMatch'
     plsql:
-      nativeType: 'CHAR(4 CHAR)'
+      nativeType: 'NCHAR(4 CHAR)'
     postgresql:
       nativeType: 'char(4)'
     sqlite:
       nativeType: 'TEXT'
     tsql:
-      nativeType: 'CHAR(4)'
+      nativeType: 'NCHAR(4)'

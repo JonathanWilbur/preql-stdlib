@@ -2,11 +2,11 @@
 apiVersion: preql/1.0.0
 kind: DataType
 metadata:
-  name: char6
+  name: fixchar8
   namespace: default
   labels:
-    preql.tech/fullSingularName: 'Fixed-length 6-character string'
-    preql.tech/fullPluralName: 'Fixed-length 6-character strings'
+    preql.tech/fullSingularName: 'Fixed-length 8-character string'
+    preql.tech/fullPluralName: 'Fixed-length 8-character strings'
     preql.tech/standard: 'true'
     preql.tech/category: 'String'
     # preql.tech/storageSizeInBytes: ''
@@ -16,12 +16,12 @@ metadata:
     # preql.tech/objectIdentifier: ''
     # preql.tech/uuid: ''
   annotations:
-    preql.tech/description: 'A string that contains 6 characters.'
+    preql.tech/description: 'A string that contains 8 characters.'
     preql.tech/author: 'Jonathan M. Wilbur'
     preql.tech/authorEmailAddress: 'jonathan@wilbur.space'
     # preql.tech/definingSpecification: ''
     # preql.tech/definingSpecificationURI: ''
-    preql.tech/exampleValue: 'EXAMPL'
+    preql.tech/exampleValue: 'EXAMPLES'
 spec:
   jsonEquivalent: 'string'
   targets:
@@ -34,19 +34,19 @@ spec:
     json:
       nativeType: 'string'
     mariadb:
-      nativeType: 'CHAR(6)'
+      nativeType: 'CHAR(8)'
     mysql:
-      nativeType: 'CHAR(6)'
+      nativeType: 'CHAR(8)'
     openldap:
       nativeType: '1.3.6.1.4.1.1466.115.121.1.15'
       ldapMatchingRule: 'caseIgnoreMatch'
       ldapOrderingRule: 'caseIgnoreOrderingMatch'
       ldapSubstringMatchingRule: 'caseIgnoreSubstringsMatch'
     plsql:
-      nativeType: 'NCHAR(6 CHAR)'
+      nativeType: 'NCHAR(8 CHAR)'
     postgresql:
-      nativeType: 'char(6)'
+      nativeType: 'char(8)'
     sqlite:
       nativeType: 'TEXT'
     tsql:
-      nativeType: 'NCHAR(6)'
+      nativeType: 'NCHAR(8)'

@@ -5,8 +5,8 @@ metadata:
   name: fixchar3
   namespace: default
   labels:
-    preql.tech/fullSingularName: 'Fixed-Length Character String'
-    preql.tech/fullPluralName: 'Fixed-Length Character String'
+    preql.tech/fullSingularName: 'Fixed-length 3-character string'
+    preql.tech/fullPluralName: 'Fixed-length 3-character strings'
     preql.tech/standard: 'true'
     preql.tech/category: 'String'
     # preql.tech/storageSizeInBytes: ''
@@ -16,16 +16,14 @@ metadata:
     # preql.tech/objectIdentifier: ''
     # preql.tech/uuid: ''
   annotations:
-    preql.tech/description: 'A Character String that is only three characters long.'
+    preql.tech/description: 'A string that contains 3 characters.'
     preql.tech/author: 'Jonathan M. Wilbur'
     preql.tech/authorEmailAddress: 'jonathan@wilbur.space'
     # preql.tech/definingSpecification: ''
     # preql.tech/definingSpecificationURI: ''
-    preql.tech/exampleValue: 'USA'
+    preql.tech/exampleValue: 'EXA'
 spec:
   jsonEquivalent: 'string'
-  minLength: 3
-  maxLength: 3
   targets:
     bson:
       nativeType: 'string'
@@ -45,10 +43,10 @@ spec:
       ldapOrderingRule: 'caseIgnoreOrderingMatch'
       ldapSubstringMatchingRule: 'caseIgnoreSubstringsMatch'
     plsql:
-      nativeType: 'CHAR(3 CHAR)'
+      nativeType: 'NCHAR(3 CHAR)'
     postgresql:
       nativeType: 'char(3)'
     sqlite:
       nativeType: 'TEXT'
     tsql:
-      nativeType: 'CHAR(3)'
+      nativeType: 'NCHAR(3)'

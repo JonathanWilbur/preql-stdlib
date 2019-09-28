@@ -5,8 +5,8 @@ metadata:
   name: fixchar1
   namespace: default
   labels:
-    preql.tech/fullSingularName: 'Fixed-Length Character String'
-    preql.tech/fullPluralName: 'Fixed-Length Character String'
+    preql.tech/fullSingularName: 'Fixed-length 1-character string'
+    preql.tech/fullPluralName: 'Fixed-length 1-character strings'
     preql.tech/standard: 'true'
     preql.tech/category: 'String'
     # preql.tech/storageSizeInBytes: ''
@@ -16,16 +16,14 @@ metadata:
     # preql.tech/objectIdentifier: ''
     # preql.tech/uuid: ''
   annotations:
-    preql.tech/description: 'A Character String that is only one character long.'
+    preql.tech/description: 'A string that contains 1 character.'
     preql.tech/author: 'Jonathan M. Wilbur'
     preql.tech/authorEmailAddress: 'jonathan@wilbur.space'
     # preql.tech/definingSpecification: ''
     # preql.tech/definingSpecificationURI: ''
-    preql.tech/exampleValue: 'U'
+    preql.tech/exampleValue: 'E'
 spec:
   jsonEquivalent: 'string'
-  minLength: 1
-  maxLength: 1
   targets:
     bson:
       nativeType: 'string'
@@ -45,10 +43,10 @@ spec:
       ldapOrderingRule: 'caseIgnoreOrderingMatch'
       ldapSubstringMatchingRule: 'caseIgnoreSubstringsMatch'
     plsql:
-      nativeType: 'CHAR(1 CHAR)'
+      nativeType: 'NCHAR(1 CHAR)'
     postgresql:
       nativeType: 'char(1)'
     sqlite:
       nativeType: 'TEXT'
     tsql:
-      nativeType: 'CHAR(1)'
+      nativeType: 'NCHAR(1)'

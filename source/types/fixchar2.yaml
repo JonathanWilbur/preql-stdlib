@@ -5,8 +5,8 @@ metadata:
   name: fixchar2
   namespace: default
   labels:
-    preql.tech/fullSingularName: 'Fixed-Length Character String'
-    preql.tech/fullPluralName: 'Fixed-Length Character String'
+    preql.tech/fullSingularName: 'Fixed-length 2-character string'
+    preql.tech/fullPluralName: 'Fixed-length 2-character strings'
     preql.tech/standard: 'true'
     preql.tech/category: 'String'
     # preql.tech/storageSizeInBytes: ''
@@ -16,16 +16,14 @@ metadata:
     # preql.tech/objectIdentifier: ''
     # preql.tech/uuid: ''
   annotations:
-    preql.tech/description: 'A Character String that is only two characters long.'
+    preql.tech/description: 'A string that contains 2 characters.'
     preql.tech/author: 'Jonathan M. Wilbur'
     preql.tech/authorEmailAddress: 'jonathan@wilbur.space'
     # preql.tech/definingSpecification: ''
     # preql.tech/definingSpecificationURI: ''
-    preql.tech/exampleValue: 'US'
+    preql.tech/exampleValue: 'EX'
 spec:
   jsonEquivalent: 'string'
-  minLength: 2
-  maxLength: 2
   targets:
     bson:
       nativeType: 'string'
@@ -45,10 +43,10 @@ spec:
       ldapOrderingRule: 'caseIgnoreOrderingMatch'
       ldapSubstringMatchingRule: 'caseIgnoreSubstringsMatch'
     plsql:
-      nativeType: 'CHAR(2 CHAR)'
+      nativeType: 'NCHAR(2 CHAR)'
     postgresql:
       nativeType: 'char(2)'
     sqlite:
       nativeType: 'TEXT'
     tsql:
-      nativeType: 'CHAR(2)'
+      nativeType: 'NCHAR(2)'
