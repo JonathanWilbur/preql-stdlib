@@ -969,6 +969,50 @@ spec:
 apiVersion: preql/1.0.0
 kind: DataType
 metadata:
+  name: char1
+  namespace: default
+  labels:
+    preql.tech/fullSingularName: 'Fixed-length 1-character string'
+    preql.tech/fullPluralName: 'Fixed-length 1-character strings'
+    preql.tech/standard: 'true'
+    preql.tech/category: 'String'
+  annotations:
+    preql.tech/description: 'A string that contains 1 character.'
+    preql.tech/author: 'Jonathan M. Wilbur'
+    preql.tech/authorEmailAddress: 'jonathan@wilbur.space'
+    preql.tech/exampleValue: 'E'
+spec:
+  jsonEquivalent: 'string'
+  targets:
+    bson:
+      nativeType: 'string'
+    cql:
+      nativeType: 'text'
+    elasticsearch:
+      nativeType: 'keyword'
+    json:
+      nativeType: 'string'
+    mariadb:
+      nativeType: 'CHAR(1)'
+    mysql:
+      nativeType: 'CHAR(1)'
+    openldap:
+      nativeType: '1.3.6.1.4.1.1466.115.121.1.15'
+      ldapMatchingRule: 'caseIgnoreMatch'
+      ldapOrderingRule: 'caseIgnoreOrderingMatch'
+      ldapSubstringMatchingRule: 'caseIgnoreSubstringsMatch'
+    plsql:
+      nativeType: 'NCHAR(1 CHAR)'
+    postgresql:
+      nativeType: 'char(1)'
+    sqlite:
+      nativeType: 'TEXT'
+    tsql:
+      nativeType: 'NCHAR(1)'
+---
+apiVersion: preql/1.0.0
+kind: DataType
+metadata:
   name: latitude
   namespace: default
   labels:
@@ -3889,6 +3933,50 @@ spec:
 apiVersion: preql/1.0.0
 kind: DataType
 metadata:
+  name: char4
+  namespace: default
+  labels:
+    preql.tech/fullSingularName: 'Fixed-length 4-character string'
+    preql.tech/fullPluralName: 'Fixed-length 4-character strings'
+    preql.tech/standard: 'true'
+    preql.tech/category: 'String'
+  annotations:
+    preql.tech/description: 'A string that contains 4 characters.'
+    preql.tech/author: 'Jonathan M. Wilbur'
+    preql.tech/authorEmailAddress: 'jonathan@wilbur.space'
+    preql.tech/exampleValue: 'EXAM'
+spec:
+  jsonEquivalent: 'string'
+  targets:
+    bson:
+      nativeType: 'string'
+    cql:
+      nativeType: 'text'
+    elasticsearch:
+      nativeType: 'keyword'
+    json:
+      nativeType: 'string'
+    mariadb:
+      nativeType: 'CHAR(4)'
+    mysql:
+      nativeType: 'CHAR(4)'
+    openldap:
+      nativeType: '1.3.6.1.4.1.1466.115.121.1.15'
+      ldapMatchingRule: 'caseIgnoreMatch'
+      ldapOrderingRule: 'caseIgnoreOrderingMatch'
+      ldapSubstringMatchingRule: 'caseIgnoreSubstringsMatch'
+    plsql:
+      nativeType: 'NCHAR(4 CHAR)'
+    postgresql:
+      nativeType: 'char(4)'
+    sqlite:
+      nativeType: 'TEXT'
+    tsql:
+      nativeType: 'NCHAR(4)'
+---
+apiVersion: preql/1.0.0
+kind: DataType
+metadata:
   name: dnsRecordType
   namespace: default
   labels:
@@ -6110,6 +6198,50 @@ spec:
 apiVersion: preql/1.0.0
 kind: DataType
 metadata:
+  name: char2
+  namespace: default
+  labels:
+    preql.tech/fullSingularName: 'Fixed-length 2-character string'
+    preql.tech/fullPluralName: 'Fixed-length 2-character strings'
+    preql.tech/standard: 'true'
+    preql.tech/category: 'String'
+  annotations:
+    preql.tech/description: 'A string that contains 2 characters.'
+    preql.tech/author: 'Jonathan M. Wilbur'
+    preql.tech/authorEmailAddress: 'jonathan@wilbur.space'
+    preql.tech/exampleValue: 'EX'
+spec:
+  jsonEquivalent: 'string'
+  targets:
+    bson:
+      nativeType: 'string'
+    cql:
+      nativeType: 'text'
+    elasticsearch:
+      nativeType: 'keyword'
+    json:
+      nativeType: 'string'
+    mariadb:
+      nativeType: 'CHAR(2)'
+    mysql:
+      nativeType: 'CHAR(2)'
+    openldap:
+      nativeType: '1.3.6.1.4.1.1466.115.121.1.15'
+      ldapMatchingRule: 'caseIgnoreMatch'
+      ldapOrderingRule: 'caseIgnoreOrderingMatch'
+      ldapSubstringMatchingRule: 'caseIgnoreSubstringsMatch'
+    plsql:
+      nativeType: 'NCHAR(2 CHAR)'
+    postgresql:
+      nativeType: 'char(2)'
+    sqlite:
+      nativeType: 'TEXT'
+    tsql:
+      nativeType: 'NCHAR(2)'
+---
+apiVersion: preql/1.0.0
+kind: DataType
+metadata:
   name: irl
   namespace: default
   labels:
@@ -6938,6 +7070,50 @@ spec:
       nativeType: 'TEXT'
     tsql:
       nativeType: 'NCHAR(36)'
+---
+apiVersion: preql/1.0.0
+kind: DataType
+metadata:
+  name: char3
+  namespace: default
+  labels:
+    preql.tech/fullSingularName: 'Fixed-length 3-character string'
+    preql.tech/fullPluralName: 'Fixed-length 3-character strings'
+    preql.tech/standard: 'true'
+    preql.tech/category: 'String'
+  annotations:
+    preql.tech/description: 'A string that contains 3 characters.'
+    preql.tech/author: 'Jonathan M. Wilbur'
+    preql.tech/authorEmailAddress: 'jonathan@wilbur.space'
+    preql.tech/exampleValue: 'EXA'
+spec:
+  jsonEquivalent: 'string'
+  targets:
+    bson:
+      nativeType: 'string'
+    cql:
+      nativeType: 'text'
+    elasticsearch:
+      nativeType: 'keyword'
+    json:
+      nativeType: 'string'
+    mariadb:
+      nativeType: 'CHAR(3)'
+    mysql:
+      nativeType: 'CHAR(3)'
+    openldap:
+      nativeType: '1.3.6.1.4.1.1466.115.121.1.15'
+      ldapMatchingRule: 'caseIgnoreMatch'
+      ldapOrderingRule: 'caseIgnoreOrderingMatch'
+      ldapSubstringMatchingRule: 'caseIgnoreSubstringsMatch'
+    plsql:
+      nativeType: 'NCHAR(3 CHAR)'
+    postgresql:
+      nativeType: 'char(3)'
+    sqlite:
+      nativeType: 'TEXT'
+    tsql:
+      nativeType: 'NCHAR(3)'
 ---
 apiVersion: preql/1.0.0
 kind: DataType

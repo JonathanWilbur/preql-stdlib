@@ -1,0 +1,52 @@
+---
+apiVersion: preql/1.0.0
+kind: DataType
+metadata:
+  name: char2
+  namespace: default
+  labels:
+    preql.tech/fullSingularName: 'Fixed-length 2-character string'
+    preql.tech/fullPluralName: 'Fixed-length 2-character strings'
+    preql.tech/standard: 'true'
+    preql.tech/category: 'String'
+    # preql.tech/storageSizeInBytes: ''
+    # preql.tech/bits: ''
+    # preql.tech/signed: ''
+    # preql.tech/country: ''
+    # preql.tech/objectIdentifier: ''
+    # preql.tech/uuid: ''
+  annotations:
+    preql.tech/description: 'A string that contains 2 characters.'
+    preql.tech/author: 'Jonathan M. Wilbur'
+    preql.tech/authorEmailAddress: 'jonathan@wilbur.space'
+    # preql.tech/definingSpecification: ''
+    # preql.tech/definingSpecificationURI: ''
+    preql.tech/exampleValue: 'EX'
+spec:
+  jsonEquivalent: 'string'
+  targets:
+    bson:
+      nativeType: 'string'
+    cql:
+      nativeType: 'text'
+    elasticsearch:
+      nativeType: 'keyword'
+    json:
+      nativeType: 'string'
+    mariadb:
+      nativeType: 'CHAR(2)'
+    mysql:
+      nativeType: 'CHAR(2)'
+    openldap:
+      nativeType: '1.3.6.1.4.1.1466.115.121.1.15'
+      ldapMatchingRule: 'caseIgnoreMatch'
+      ldapOrderingRule: 'caseIgnoreOrderingMatch'
+      ldapSubstringMatchingRule: 'caseIgnoreSubstringsMatch'
+    plsql:
+      nativeType: 'NCHAR(2 CHAR)'
+    postgresql:
+      nativeType: 'char(2)'
+    sqlite:
+      nativeType: 'TEXT'
+    tsql:
+      nativeType: 'NCHAR(2)'

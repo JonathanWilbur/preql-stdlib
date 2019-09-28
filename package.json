@@ -11,13 +11,13 @@
     ],
     "description": "",
     "devDependencies": {
-        "@babel/core": "^7.6.0",
-        "@babel/preset-env": "^7.6.0",
+        "@babel/core": "^7.6.2",
+        "@babel/preset-env": "^7.6.2",
         "@babel/preset-typescript": "^7.6.0",
         "@types/js-yaml": "^3.12.1",
-        "@types/node": "^12.7.4",
+        "@types/node": "^12.7.8",
         "babel-jest": "^24.9.0",
-        "eslint": "^6.3.0",
+        "eslint": "^6.4.0",
         "jest": "^24.9.0",
         "jest-junit": "^7.0.0"
     },
@@ -28,8 +28,16 @@
     "files": [
         "dist/**/*"
     ],
-    "keywords": [],
+    "keywords": [
+        "sql",
+        "ddl",
+        "schema",
+        "database",
+        "dbms",
+        "modeling"
+    ],
     "license": "MIT",
+    "main": "./dist/index.json",
     "name": "preql-stdlib",
     "scripts": {
         "build": "make -B -f Makefile",
@@ -39,6 +47,6 @@
     "version": "0.1.0",
     "dependencies": {
         "js-yaml": "^3.13.1",
-        "preql-core": "^1.0.0"
+        "preql-core": "^1.0.2"
     }
 }
